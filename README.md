@@ -22,6 +22,7 @@
 ## References 
 * class notes and lectures
 * https://www.programiz.com/dsa/radix-sort
+* https://www.programiz.com/dsa/merge-sort
 
 ## Known errors
 * n/a

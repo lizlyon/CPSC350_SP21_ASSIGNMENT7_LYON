@@ -23,6 +23,7 @@
 * class notes and lectures
 * https://www.programiz.com/dsa/radix-sort
 * https://www.programiz.com/dsa/merge-sort
+* https://www.cplusplus.com/reference/ctime/clock/
 
 ## Known errors
 * n/a

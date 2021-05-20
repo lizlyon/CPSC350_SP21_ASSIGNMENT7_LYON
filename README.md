@@ -1,7 +1,12 @@
 # CPSC350_SP21_ASSIGNMENT7_LYON
 
 ## Program
-* Sorting Assignment.
+* Sorting Assignment
+* Takes in 3 command line arguments 
+* First argument is the mode: "create" or "sort"
+* Second arguments is the integer value coressponding to the amount of ints sorted
+* Third arguments is the .txt output file 
+* In order for this program to run please enter the "create" mode prior to "sort"
 * **Build instructions located at the end**
 
 ## Identifying Information

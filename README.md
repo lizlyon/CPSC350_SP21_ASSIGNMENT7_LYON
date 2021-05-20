@@ -22,8 +22,8 @@
 ## Header files
 * sort.h
 
-## Text files
-* 
+## Pdf files
+* Lyon_report.pdf
 
 ## References 
 * class notes and lectures

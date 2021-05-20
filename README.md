@@ -11,10 +11,11 @@
 * Course: CPSC350-03
 
 ## Source files
-* 
+* main.cpp
+* sort.cpp
 
 ## Header files
-* 
+* sort.h
 
 ## Text files
 * 
@@ -30,4 +31,5 @@
 
 ## Build instructions 
 * g++ *.cpp -o assignment7
-* ./assignment7
+* ./assignment7 create 250 randDouble.txt
+* ./assignment7 sort 250 randDouble.txt

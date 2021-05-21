@@ -280,9 +280,9 @@ void Sort::run(const string& mode, int number, const string& filename){
 	else if (mode == "sort"){
 		readFile(filename);
 
-		cout << "\nGiven array: " << endl;
-		printArray(arr, size);
-		cout << endl;
+		// cout << "\nGiven array: " << endl;
+		// printArray(arr, size);
+		// cout << endl;
 
 		cout << "\n1) QUICK sorted array:" << endl;
 		clock_t startQuick = clock();
@@ -292,9 +292,8 @@ void Sort::run(const string& mode, int number, const string& filename){
 		cout << "End time: " << endQuick << endl;
 		cout << "Duration (s): " << (float(endQuick - startQuick) / (CLOCKS_PER_SEC)) << " seconds" << endl;
 		cout << "Duration (ms): " << (float(endQuick - startQuick) / (CLOCKS_PER_SEC)) * 1000 << " milliseconds" << endl << endl;
-		printArray(quickArr, size);
 
-		cout << "\n\n2) MERGE sorted array:" << endl;
+		cout << "\n2) MERGE sorted array:" << endl;
 		clock_t startMerge = clock();
 		cout << "Start time: " << startMerge << endl;
 		mergeSort(mergeArr, 0, size - 1);
@@ -302,18 +301,15 @@ void Sort::run(const string& mode, int number, const string& filename){
 		cout << "End time: " << endMerge << endl;
 		cout << "Duration (s): " << (float(endMerge - startMerge) / (CLOCKS_PER_SEC)) << " seconds" << endl;
 		cout << "Duration (ms): " << (float(endMerge - startMerge) / (CLOCKS_PER_SEC)) * 1000 << " milliseconds" << endl << endl;
-		printArray(mergeArr, size);
 
-		cout << "\n\n3) SELECTION sorted array:" << endl;
+		cout << "\n3) SELECTION sorted array:" << endl;
 		clock_t startSelection = clock();
 		cout << "Start time: " << startSelection << endl;
 		selectionSort(selectionArr, size);
 		clock_t endSelection = clock();
 		cout << "End time: " << endSelection << endl;
 		cout << "Duration (s): " << (float(endSelection - startSelection) / (CLOCKS_PER_SEC)) << " seconds" << endl;
-		cout << "Duration (ms): " << (float(endSelection - startSelection) / (CLOCKS_PER_SEC)) * 1000<< " milliseconds" << endl << endl;
-		printArray(selectionArr, size);
-		cout << endl;
+		cout << "Duration (ms): " << (float(endSelection - startSelection) / (CLOCKS_PER_SEC)) * 1000 << " milliseconds" << endl << endl;
 
 		cout << "\n4) INSERTION sorted array:" << endl;
 		clock_t startInsertion = clock();
@@ -322,9 +318,7 @@ void Sort::run(const string& mode, int number, const string& filename){
 		clock_t endInsertion = clock();
 		cout << "End time: " << endInsertion << endl;
 		cout << "Duration (s): " << (float(endInsertion - startInsertion) / (CLOCKS_PER_SEC)) << " seconds" << endl;
-		cout << "Duration (ms): " << (float(endInsertion - startInsertion) / (CLOCKS_PER_SEC)) * 1000<< " miliseconds" << endl << endl;
-		printArray(insertionArr, size);
-		cout << endl;
+		cout << "Duration (ms): " << (float(endInsertion - startInsertion) / (CLOCKS_PER_SEC)) * 1000 << " miliseconds" << endl << endl;
 
 		cout << "\n5) BUBBLE sorted array:" << endl;
 		clock_t startBubble = clock();
@@ -333,10 +327,7 @@ void Sort::run(const string& mode, int number, const string& filename){
 		clock_t endBubble = clock();
 		cout << "End time: " << endBubble << endl;
 		cout << "Duration (s): " << (float(endBubble - startBubble) / (CLOCKS_PER_SEC)) << " seconds" << endl;
-		cout << "Duration (ms): " << (float(endBubble - startBubble) / (CLOCKS_PER_SEC)) * 1000<< " milliseconds" << endl << endl;
-
-		printArray(bubbleArr, size);
-		cout << endl;
+		cout << "Duration (ms): " << (float(endBubble - startBubble) / (CLOCKS_PER_SEC)) * 1000 << " milliseconds" << endl << endl;
 
 		cout << "\n6) RADIX sorted array:" << endl;
 		clock_t startRadix = clock();
@@ -346,7 +337,5 @@ void Sort::run(const string& mode, int number, const string& filename){
 		cout << "End time: " << endRadix << endl;
 		cout << "Duration (s): " << (float(endRadix - startRadix) / (CLOCKS_PER_SEC)) << " seconds" << endl;
 		cout << "Duration (ms): " << (float(endRadix - startRadix) / (CLOCKS_PER_SEC)) * 1000 << " milliseconds" << endl << endl;
-		printArray(radixArr, size);
-		cout << endl << "\n";
 	}
 }

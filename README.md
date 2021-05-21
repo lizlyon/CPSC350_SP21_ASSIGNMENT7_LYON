@@ -2,10 +2,10 @@
 
 ## Program
 * Sorting Assignment
-* Takes in 3 command line arguments 
+* Takes in 3 command line arguments
 * First argument is the mode: "create" or "sort"
-* Second arguments is the integer value coressponding to the amount of ints sorted
-* Third arguments is the .txt output file 
+* Second arguments is the integer value corresponding to the amount of ints sorted
+* Third arguments is the .txt output file
 * In order for this program to run please enter the "create" mode prior to "sort"
 * **Build instructions located at the end**
 
@@ -23,9 +23,9 @@
 * sort.h
 
 ## Pdf files
-* Lyon_report.pdf
+* Lyon_350report.pdf
 
-## References 
+## References
 * class notes and lectures
 * https://www.programiz.com/dsa/radix-sort
 * https://www.programiz.com/dsa/merge-sort
@@ -34,7 +34,7 @@
 ## Known errors
 * n/a
 
-## Build instructions 
+## Build instructions
 * g++ *.cpp -o assignment7
 * ./assignment7 create 250 randDouble.txt
 * ./assignment7 sort 250 randDouble.txt

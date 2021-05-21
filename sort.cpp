@@ -111,9 +111,6 @@ void Sort::mergeSort(double* arr, int lo, int hi){
 void Sort::selectionSort(double* arr, int n){ //repeadedy pick the next smallest thing and put in order
 	//k is to the right of k, so its from that region that we pick the next min
 	//then when found, we swap the values
-	clock_t s = clock();
-	cout << "Start time: " << s << endl;
-
 	int i, j, currMinIdx;
 
 	for (i = 0; i < n-1; i++){
@@ -129,15 +126,9 @@ void Sort::selectionSort(double* arr, int n){ //repeadedy pick the next smallest
 		//now swap the currMinIdx at i position
 		swap(&arr[currMinIdx], &arr[i]);
 	}
-
-	clock_t e = clock();
-	cout << "End time: " << e << endl;
-	cout << "Duration: " << (float(e - s) / (CLOCKS_PER_SEC)) * 1000 << " seconds" << endl << endl;
 }
 
 void Sort::insertionSort(double* arr, int n){
-  clock_t s = clock();
-  cout << "Start time: " << s << endl;
 
   for (int j = 1; j < n; ++j){ //0 position is already sorted relative to itself
     double temp = arr[j]; //save value at the marker j
@@ -149,14 +140,9 @@ void Sort::insertionSort(double* arr, int n){
     }
     arr[k] = temp; //once the loop breaks then we found the correct temp value pos
   }
-  clock_t e = clock();
-  cout << "End time: " << e << endl;
-  cout << "Duration: " << (float(e - s) / (CLOCKS_PER_SEC)) * 1000 << " seconds" << endl << endl;
 }
 
 void Sort::bubbleSort(double* arr, int n){ //quadratic in both comparisions and swaps
-	clock_t s = clock();
-	cout << "Start time: " << s << endl;
 
 	  for(int i = 0; i < n-1; ++i){
 			for(int j = 0; j < n-1; ++j){
@@ -165,10 +151,6 @@ void Sort::bubbleSort(double* arr, int n){ //quadratic in both comparisions and 
 		  	}
 			}
 	  }
-
-	  clock_t e = clock();
-	  cout << "End time: " << e << endl;
-	  cout << "Duration: " << (float(e - s) / (CLOCKS_PER_SEC)) * 1000 << " seconds" << endl << endl;
 }
 
 
@@ -220,8 +202,6 @@ void Sort::countSort(double* arr, int n, double temp){
 }
 
 void Sort::radixSort(double* arr, int n){
-	clock_t s = clock();
-	cout << "Start time: " << s << endl;
 
 	//get max
 	double maxNum = getMax(arr,n);
@@ -230,9 +210,6 @@ void Sort::radixSort(double* arr, int n){
 	for (int temp = 1; maxNum/temp > 0; temp *=10){
 		countSort(arr,n,temp);
 	}
-	clock_t e = clock();
-	cout << "End time: " << e << endl;
-	cout << "Duration: " << (float(e - s) / (CLOCKS_PER_SEC)) * 1000 << " seconds" << endl << endl;
 }
 
 void Sort::printArray(double* arr, int n){
@@ -308,40 +285,67 @@ void Sort::run(const string& mode, int number, const string& filename){
 		cout << endl;
 
 		cout << "\n1) QUICK sorted array:" << endl;
-		clock_t start = clock();
-		cout << "Start time: " << start << endl;
+		clock_t startQuick = clock();
+		cout << "Start time: " << startQuick << endl;
 		quickSort(quickArr, 0, size - 1);
-		clock_t end = clock();
-		cout << "End time: " << end << endl;
-		cout << "Duration: " << (float(end - start) / (CLOCKS_PER_SEC)) * 1000 << " seconds" << endl << endl;
+		clock_t endQuick = clock();
+		cout << "End time: " << endQuick << endl;
+		cout << "Duration (s): " << (float(endQuick - startQuick) / (CLOCKS_PER_SEC)) << " seconds" << endl;
+		cout << "Duration (ms): " << (float(endQuick - startQuick) / (CLOCKS_PER_SEC)) * 1000 << " milliseconds" << endl << endl;
 		printArray(quickArr, size);
 
 		cout << "\n\n2) MERGE sorted array:" << endl;
-		clock_t s = clock();
-		cout << "Start time: " << s << endl;
+		clock_t startMerge = clock();
+		cout << "Start time: " << startMerge << endl;
 		mergeSort(mergeArr, 0, size - 1);
-		clock_t e = clock();
-		cout << "End time: " << e << endl;
-		cout << "Duration: " << (float(e - s) / (CLOCKS_PER_SEC)) * 1000 << " seconds" << endl << endl;
+		clock_t endMerge = clock();
+		cout << "End time: " << endMerge << endl;
+		cout << "Duration (s): " << (float(endMerge - startMerge) / (CLOCKS_PER_SEC)) << " seconds" << endl;
+		cout << "Duration (ms): " << (float(endMerge - startMerge) / (CLOCKS_PER_SEC)) * 1000 << " milliseconds" << endl << endl;
 		printArray(mergeArr, size);
 
 		cout << "\n\n3) SELECTION sorted array:" << endl;
+		clock_t startSelection = clock();
+		cout << "Start time: " << startSelection << endl;
 		selectionSort(selectionArr, size);
+		clock_t endSelection = clock();
+		cout << "End time: " << endSelection << endl;
+		cout << "Duration (s): " << (float(endSelection - startSelection) / (CLOCKS_PER_SEC)) << " seconds" << endl;
+		cout << "Duration (ms): " << (float(endSelection - startSelection) / (CLOCKS_PER_SEC)) * 1000<< " milliseconds" << endl << endl;
 		printArray(selectionArr, size);
 		cout << endl;
 
 		cout << "\n4) INSERTION sorted array:" << endl;
+		clock_t startInsertion = clock();
+		cout << "Start time: " << startInsertion << endl;
 		insertionSort(insertionArr, size);
+		clock_t endInsertion = clock();
+		cout << "End time: " << endInsertion << endl;
+		cout << "Duration (s): " << (float(endInsertion - startInsertion) / (CLOCKS_PER_SEC)) << " seconds" << endl;
+		cout << "Duration (ms): " << (float(endInsertion - startInsertion) / (CLOCKS_PER_SEC)) * 1000<< " miliseconds" << endl << endl;
 		printArray(insertionArr, size);
 		cout << endl;
 
 		cout << "\n5) BUBBLE sorted array:" << endl;
+		clock_t startBubble = clock();
+		cout << "Start time: " << startBubble << endl;
 		bubbleSort(bubbleArr, size);
+		clock_t endBubble = clock();
+		cout << "End time: " << endBubble << endl;
+		cout << "Duration (s): " << (float(endBubble - startBubble) / (CLOCKS_PER_SEC)) << " seconds" << endl;
+		cout << "Duration (ms): " << (float(endBubble - startBubble) / (CLOCKS_PER_SEC)) * 1000<< " milliseconds" << endl << endl;
+
 		printArray(bubbleArr, size);
 		cout << endl;
 
 		cout << "\n6) RADIX sorted array:" << endl;
+		clock_t startRadix = clock();
+		cout << "Start time: " << startRadix << endl;
 		radixSort(radixArr, size);
+		clock_t endRadix = clock();
+		cout << "End time: " << endRadix << endl;
+		cout << "Duration (s): " << (float(endRadix - startRadix) / (CLOCKS_PER_SEC)) << " seconds" << endl;
+		cout << "Duration (ms): " << (float(endRadix - startRadix) / (CLOCKS_PER_SEC)) * 1000 << " milliseconds" << endl << endl;
 		printArray(radixArr, size);
 		cout << endl << "\n";
 	}
